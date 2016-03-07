@@ -9,7 +9,10 @@ router.get('/', function(req, res, next) {
   warroom((error, data) => res.json(data));
 });
 
-router.get('/')
+router.get('/:id', function(req, res, next){
+  warroom((error, data) => res.json(data.data[req.params.id]));
+  
+});
 
 
 module.exports = router;
